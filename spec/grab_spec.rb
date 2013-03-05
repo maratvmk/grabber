@@ -63,7 +63,7 @@ describe "Grabber" do
 		it "all files downloaded correctly" do
 			@grab.download_to "tmp"
 			Dir.chdir "tmp"
-			(["ruby.gif", "download.gif"] - Dir.glob("*")).should eq []
+			Dir.glob("*").should =~ ["ruby.gif", "download.gif"]
 		end
 	end
 end
