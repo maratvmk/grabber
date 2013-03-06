@@ -29,7 +29,7 @@ describe "Grabber" do
         		<img alt="Rails" src="/images/rails.png"/>
    	 		<img src="/images/headers/overview.gif" alt="Web development that doesn't hurt"/>
    	 	EOS
-   	 	@text2 = "<div class='message'><img src='/images/rails.png' height='112' alt='Rails'/> "
+   	 		@text2 = "<div class='message'><img src='/images/rails.png' height='112' alt='Rails'/> "
         	@text3 = "<img src=/headers/overview.gif />"
 		end
 
@@ -62,7 +62,7 @@ describe "Grabber" do
 
 		it "all files downloaded correctly" do
 			@grab.download_to "tmp"
-			Dir.chdir "tmp"
+			Dir.chdir("tmp")
 			Dir.glob("*").should =~ ["ruby.gif", "download.gif"]
 		end
 	end
