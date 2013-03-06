@@ -26,10 +26,9 @@ class Grabber
 
 	def download_to path
 		@links.each do |link|	
-			img_name = File.basename link
 			begin 
 				open(link, 'rb') do |img| 
-					File.new("#{path}/#{img_name}", 'wb').write(img.read)
+					File.new("#{path}/#{File.basename(link)}", 'wb').write(img.read)
 				end
 			rescue Exception => e
 				next
